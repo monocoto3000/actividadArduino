@@ -29,13 +29,10 @@ app.get("/", (req, res) => {
 
 io.on("connection", (socket) => {
   console.log(chalk.green("Cliente conectado"));
-  consumer.subscribe("equipo/animales/gecko");
+  consumer.subscribe("cmd/meteostudio/data");
   consumer.on("message", (topic, message) => {
     const msg = `${topic}: ${message}`;
-
-    // Transformar el mensaje en un objeto antes de enviarlo al cliente
     const parsedMessage = parseMqttMessage(message);
-
     console.log(
       chalk.cyan(
         "--------------------------------------------------------------"

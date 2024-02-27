@@ -11,15 +11,15 @@ function Home() {
       <main>
         <section>
           <h2>Practica</h2>
-          <ul>
-            {data.map((item, index) => (
+          {data.map((item, index) => (
+            <ul>
               <li key={index}>
-                <h5>Humedad: {item.humedad}</h5>
-                <h5>Temperatura: {item.temperatura}</h5>
-                <h5>Fototransitor: {item.fototransistor}</h5>
+                <h5><b>Humedad:</b> {item.humedad}</h5>
+                <h5><b>Temperatura:</b> {item.temperatura}</h5>
+                <h5><b>Fototransitor:</b> {item.fototransistor}</h5>
               </li>
-            ))}
-          </ul>
+            </ul>
+          ))}
         </section>
       </main>
     </div>
